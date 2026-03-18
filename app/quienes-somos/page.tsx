@@ -14,8 +14,12 @@ export default function QuienesSomosPage() {
       {/* Image + Story */}
       <section className="border-b border-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 sm:pt-24 sm:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 items-center max-w-6xl mx-auto">
+            {/* Mobile-only title — sits above the image */}
+            <h2 className="lg:hidden text-2xl font-semibold tracking-tight text-gray-900 font-display">
+              Nuestra historia
+            </h2>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 lg:order-1">
               <Image
                 src="/quienes-somos/nuestra-historia.jpeg"
                 alt="Despensa Natural — nuestra historia"
@@ -25,8 +29,8 @@ export default function QuienesSomosPage() {
                 priority
               />
             </div>
-            <div className="order-1 lg:order-2">
-              <h2 className="text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl font-display">
+            <div className="lg:order-2">
+              <h2 className="hidden lg:block text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl font-display">
                 Nuestra historia
               </h2>
               <p className="mt-4 text-gray-600 leading-relaxed">

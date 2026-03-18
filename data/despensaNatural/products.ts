@@ -432,7 +432,7 @@ export const products: Product[] = [
     brand: "Best",
     description:
       "Barras Best sabor Coco, con 20 g de proteína por barra. Alto en fibra y sin azúcar añadida. Una opción práctica para colaciones más naturales.",
-    price: 890,
+    price: 850,
     images: ["/products/barras-best-coco-10u/barras-best-coco.jpg"],
     category: getCat("barritas"),
     collection: getCol("barritas"),
@@ -449,7 +449,7 @@ export const products: Product[] = [
     brand: "Best",
     description:
       "Barras Best sabor Frutos rojos, con 20 g de proteína por barra. Alto en fibra y sin azúcar añadida. Ideales para llevar en la mochila o cartera.",
-    price: 890,
+    price: 850,
     images: ["/products/barras-best-frutos-rojos-10u/pedrosk-99.jpg"],
     category: getCat("barritas"),
     collection: getCol("barritas"),
@@ -466,7 +466,7 @@ export const products: Product[] = [
     brand: "Best",
     description:
       "Barras Best sabor Salty caramel, con 20 g de proteína por barra. Alto en fibra y sin azúcar añadida. El equilibrio justo entre dulce y salado.",
-    price: 890,
+    price: 850,
     images: ["/products/barras-best-salty-caramel-10u/pedrosk-91.jpg"],
     category: getCat("barritas"),
     collection: getCol("barritas"),
@@ -483,7 +483,7 @@ export const products: Product[] = [
     brand: "Best",
     description:
       "Barras Best sabor Naranja, con 20 g de proteína por barra. Alto en fibra y sin azúcar añadida. Frescas y energéticas, ideales para media mañana, merienda o antes de entrenar.",
-    price: 890,
+    price: 850,
     images: ["/products/barras-best-naranja-10u/pedrosk-97.jpg"],
     category: getCat("barritas"),
     collection: getCol("barritas"),
@@ -500,7 +500,7 @@ export const products: Product[] = [
     brand: "Best",
     description:
       "Barras Best sabor Banana Split, con 20 g de proteína por barra. Alto en fibra y sin azúcar añadida. Una opción dulce y saciante, perfecta para colaciones o después de entrenar.",
-    price: 890,
+    price: 850,
     images: ["/products/barras-best-banana-split-10u/barras-best-banana-split.jpg"],
     cardImagePosition: "center 85%",
     pdpImagePosition: "center 80%",
@@ -521,7 +521,7 @@ export const products: Product[] = [
     brand: "Las Casuarinas",
     description:
       "Huevos de campo Las Casuarinas, de gallinas criadas al aire libre. Ideales para preparaciones diarias con sabor casero.",
-    price: 380,
+    price: 300,
     images: ["/products/huevos-de-campo-las-casuarinas-30u/huevos-de-campo.jpg"],
     pdpImagePosition: "center 75%",
     category: getCat("huevos"),

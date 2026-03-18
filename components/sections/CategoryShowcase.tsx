@@ -66,9 +66,9 @@ function MultiImageCollectionCard({
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <span className="px-4 py-2 bg-black/30 backdrop-blur-[2px] rounded-lg">
+            <span className="md:px-4 md:py-2 md:bg-black/30 md:backdrop-blur-[2px] md:rounded-lg">
               <h3
-                className="font-semibold text-white text-center text-base sm:text-lg md:text-xl tracking-wide"
+                className="font-semibold text-white text-center text-sm md:text-lg tracking-wide"
                 style={{ textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
               >
                 {collection.name}
