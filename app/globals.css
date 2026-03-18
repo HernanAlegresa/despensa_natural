@@ -8,7 +8,7 @@
     --foreground: 0 0% 3.9%;
     --border: 0 0% 89.8%;
     /* Verde principal de marca (aprox.) */
-    --primary: 145 44% 25%;
+    --primary: 145 44% 32%;
   }
 }
 
@@ -23,7 +23,7 @@
     @apply outline-none ring-0;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#F0E8DB] text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

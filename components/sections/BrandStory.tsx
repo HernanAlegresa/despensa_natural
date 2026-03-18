@@ -17,13 +17,17 @@ export function BrandStory() {
   const imageY = useTransform(scrollYProgress, [0, 1], [40, -40]);
 
   return (
-    <section id="brand-story" ref={sectionRef} className="overflow-hidden border-0 bg-gray-50 py-8 sm:py-10">
+    <section
+      id="brand-story"
+      ref={sectionRef}
+      className="overflow-hidden border-0 bg-[#F0E8DB] py-8 sm:py-10"
+    >
       <div className="container mx-auto border-0 px-4">
         <div className="grid items-center gap-12 border-0 lg:grid-cols-2 lg:gap-20">
-          {/* Image with parallax */}
+          {/* Image with parallax (desktop) */}
           <motion.div
             style={{ y: imageY }}
-            className="relative aspect-[4/3] overflow-hidden rounded-2xl border-0"
+            className="relative hidden aspect-[4/3] overflow-hidden rounded-2xl border-0 lg:block"
           >
             <Image
               src={LIFESTYLE_IMAGE}
@@ -50,7 +54,7 @@ export function BrandStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="mb-6 text-xl font-semibold tracking-tight text-gray-900 sm:text-2xl"
+              className="mb-6 text-xl font-semibold tracking-tight text-[#004A3D] sm:text-2xl"
             >
               Comer mejor.
               <br />
@@ -58,12 +62,26 @@ export function BrandStory() {
               <br />
               Elegir productos naturales.
             </motion.h2>
+
+            {/* Image on mobile: debajo del título, encima del texto */}
+            <motion.div
+              style={{ y: imageY }}
+              className="relative mb-6 aspect-[4/3] overflow-hidden rounded-2xl border-0 lg:hidden"
+            >
+              <Image
+                src={LIFESTYLE_IMAGE}
+                alt="Despensa Natural — alimentos naturales"
+                fill
+                className="object-cover"
+                sizes="100vw"
+              />
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-8 space-y-4 text-gray-600 leading-relaxed"
+              className="mb-8 space-y-4 text-[#292412] leading-relaxed"
             >
               <p>
                 Trabajamos con alimentos reales sin ultraprocesados. Productos
@@ -87,14 +105,14 @@ export function BrandStory() {
             >
               <Link
                 href="/catalogo"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 transition-colors hover:text-gray-600"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#004A3D] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#004A3D]/90"
               >
                 Ver catálogo
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/quienes-somos"
-                className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 transition-colors hover:text-gray-600"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#004A3D] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#004A3D]/90"
               >
                 Quiénes somos
                 <ArrowRight className="h-4 w-4" />

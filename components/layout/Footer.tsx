@@ -14,12 +14,12 @@ export function Footer() {
   ];
 
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className="border-t border-[#292412] bg-[#292412]">
       {/* Bloques principales */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6 lg:gap-8 text-center md:text-left">
           {/* Bloque 1: Marca */}
-          <div className="flex items-center">
+          <div className="flex items-center justify-center md:justify-start">
             <Link
               href="/"
               className="inline-block focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded"
@@ -35,8 +35,8 @@ export function Footer() {
           </div>
 
           {/* Bloque 2: Navegación */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-800">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F0E8DB]">
               Navegación
             </h3>
             <ul className="mt-3 space-y-2">
@@ -44,7 +44,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white rounded"
+                    className="text-sm text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]/90 focus:outline-none focus:ring-2 focus:ring-[#F0E8DB] focus:ring-offset-2 focus:ring-offset-[#292412] rounded"
                   >
                     {link.label}
                   </Link>
@@ -54,8 +54,8 @@ export function Footer() {
           </div>
 
           {/* Bloque 3: Contacto */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-800">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F0E8DB]">
               Contacto
             </h3>
             <ul className="mt-4 space-y-3">
@@ -65,7 +65,7 @@ export function Footer() {
                     href={siteConfig.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white rounded"
+                    className="inline-flex items-center gap-2 text-sm text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]/90 focus:outline-none focus:ring-2 focus:ring-[#F0E8DB] focus:ring-offset-2 focus:ring-offset-[#292412] rounded"
                   >
                     <MessageCircle className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                     WhatsApp
@@ -78,7 +78,7 @@ export function Footer() {
                     href={siteConfig.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white rounded"
+                    className="inline-flex items-center gap-2 text-sm text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]/90 focus:outline-none focus:ring-2 focus:ring-[#F0E8DB] focus:ring-offset-2 focus:ring-offset-[#292412] rounded"
                   >
                     <Instagram className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                     Instagram
@@ -88,14 +88,14 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white rounded"
+                  className="inline-flex items-center gap-2 text-sm text-[#FFFFFF] transition-colors hover:text-[#FFFFFF]/90 focus:outline-none focus:ring-2 focus:ring-[#F0E8DB] focus:ring-offset-2 focus:ring-offset-[#292412] rounded"
                 >
                   <Mail className="h-4 w-4 shrink-0" strokeWidth={1.5} />
                   {siteConfig.email}
                 </a>
               </li>
               {siteConfig.location && (
-                <li className="inline-flex items-start gap-2 text-sm text-gray-600">
+                <li className="inline-flex items-start gap-2 text-sm text-[#FFFFFF]">
                   <MapPin className="h-4 w-4 shrink-0 mt-0.5" strokeWidth={1.5} />
                   <span>{siteConfig.location}</span>
                 </li>
@@ -106,19 +106,19 @@ export function Footer() {
       </div>
 
       {/* Franja inferior */}
-      <div className="border-t border-gray-200 bg-gray-50">
+      <div className="border-t border-[#004A3D] bg-[#004A3D]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="relative flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center">
-            <p className="text-sm text-gray-600 sm:mx-auto">
+            <p className="text-sm text-[#F0E8DB] sm:mx-auto">
               © {new Date().getFullYear()} {siteConfig.name}. Todos los derechos reservados.
             </p>
-            <p className="text-xs text-gray-500 sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 sm:text-right">
+            <p className="text-xs text-[#A8CFB0] sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 sm:text-right">
               Sitio desarrollado por{" "}
               <a
                 href={DEVELOPER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 underline decoration-gray-300 underline-offset-2 transition-colors hover:text-gray-900 hover:decoration-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-gray-50 rounded"
+                className="text-[#A8CFB0] underline decoration-[#A8CFB0]/60 underline-offset-2 transition-colors hover:text-[#A8CFB0] hover:decoration-[#A8CFB0] focus:outline-none focus:ring-2 focus:ring-[#F0E8DB] focus:ring-offset-2 focus:ring-offset-[#004A3D] rounded"
               >
                 {DEVELOPER_NAME}
               </a>

@@ -71,7 +71,7 @@ export function FilterChips() {
           onClick={() => removeFilter(chip.type, chip.value)}
           className={cn(
             "inline-flex items-center gap-1 px-3 py-1 rounded-full",
-            "bg-gray-100 text-gray-700 text-sm",
+            "bg-gray-100 text-[#292412] text-sm",
             "hover:bg-gray-200 transition-colors",
             "focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
           )}

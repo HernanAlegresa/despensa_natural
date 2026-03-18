@@ -55,49 +55,52 @@ export default function EnviosPage() {
     "https://www.google.com/maps/d/u/0/viewer?hl=es&mid=10JPa-vk5603TAEtLW6l_4j62jq7ndkY&ll=-34.85978151803106%2C-56.06025847526988&z=12";
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-16">
-      <div className="mx-auto max-w-4xl">
+    <div className="min-h-screen bg-[#F0E8DB]">
+      <div className="container mx-auto px-4 pt-24 pb-16">
+        <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-[#004A3D] sm:text-5xl">
             Envíos
           </h1>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-[#292412]">
             Cómo recibir tu pedido. Retiro o envío en Montevideo y alrededores.
           </p>
         </div>
 
         <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold font-display">Opciones de entrega</h2>
-          <div className="overflow-hidden rounded-lg border border-gray-200">
+          <h2 className="mb-6 text-2xl font-bold text-[#292412]">Opciones de entrega</h2>
+          <div className="overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-gray-200 bg-gray-50">
-                  <th className="px-4 py-3 text-left text-sm font-semibold sm:px-6">
+                <tr className="border-b border-[#004A3D]/30 bg-[#004A3D]">
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[#F0E8DB] sm:px-6">
                     Método
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold sm:px-6">
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[#F0E8DB] sm:px-6">
                     Plazo
                   </th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold sm:px-6">
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-[#F0E8DB] sm:px-6">
                     Costo
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-[#292412]/15">
                 {deliveryOptions.map((opt) => (
-                  <tr key={opt.method}>
+                  <tr key={opt.method} className="bg-[#F9F5F0]">
                     <td className="px-4 py-4 sm:px-6">
-                      <p className="font-medium">{opt.method}</p>
+                      <p className="font-medium text-[#292412]">{opt.method}</p>
                       {opt.note && (
-                        <p className="mt-0.5 text-sm text-gray-500">
+                        <p className="mt-0.5 text-sm text-[#004A3D]">
                           {opt.note}
                         </p>
                       )}
                     </td>
-                    <td className="px-4 py-4 text-sm text-gray-600 sm:px-6">
-                      {opt.time}
+                    <td className="px-4 py-4 text-sm sm:px-6">
+                      <span className="inline-flex rounded-full bg-[#292412]/10 px-2.5 py-1 text-xs font-semibold text-[#292412]">
+                        {opt.time}
+                      </span>
                     </td>
-                    <td className="px-4 py-4 text-sm font-medium sm:px-6">
+                    <td className="px-4 py-4 text-sm font-medium text-[#292412] sm:px-6">
                       {opt.price.split("\n").map((line, index) => (
                         <p
                           key={index}
@@ -115,16 +118,25 @@ export default function EnviosPage() {
         </section>
 
         <section className="mb-16">
-          <h2 className="mb-6 text-2xl font-bold font-display">Información útil</h2>
+          <h2 className="mb-6 text-2xl font-bold text-[#292412]">Información útil</h2>
           <div className="grid gap-6 sm:grid-cols-2">
             {policies.map((policy) => (
               <div
                 key={policy.title}
-                className="rounded-lg border border-gray-200 p-6"
+                className="rounded-2xl bg-[#F9F5F0] p-6 shadow-[0_10px_24px_rgba(0,0,0,0.25)]"
               >
-                <policy.icon className="mb-3 h-6 w-6" strokeWidth={1.5} />
-                <h3 className="mb-2 text-lg font-semibold">{policy.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">
+                <div className="mb-3 flex items-center gap-3">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#004A3D]">
+                    <policy.icon
+                      className="h-5 w-5 text-[#F0E8DB]"
+                      strokeWidth={1.5}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-[#004A3D]">
+                    {policy.title}
+                  </h3>
+                </div>
+                <p className="text-sm leading-relaxed text-[#292412]">
                   {policy.description}
                 </p>
               </div>
@@ -133,43 +145,44 @@ export default function EnviosPage() {
         </section>
 
         <section>
-          <h2 className="mb-4 text-2xl font-bold font-display">
-            Ubicación y zonas de envío
-          </h2>
-          <p className="mb-4 text-gray-600">
-            Podés coordinar el retiro de tu pedido por WhatsApp. El punto de
-            retiro está en Jardines de Carrasco, en Ricardo Areco 7530.
-          </p>
-          <p className="mb-4 text-gray-600">
-            Para las entregas a domicilio, consultá las zonas de envío en el{" "}
+          <div className="rounded-2xl bg-[#F9F5F0] p-6 shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
+            <h2 className="text-2xl font-bold text-[#292412]">Ubicación y zonas de envío</h2>
+            <p className="mt-3 text-[#292412]">
+              Podés coordinar el retiro de tu pedido por WhatsApp. El punto de
+              retiro está en Jardines de Carrasco, en Ricardo Areco 7530.
+            </p>
+            <p className="mt-3 text-[#292412]">
+              Para las entregas a domicilio, consultá las zonas de envío en el{" "}
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#004A3D] underline underline-offset-2 hover:no-underline"
+              >
+                mapa de envíos
+              </a>
+              .
+            </p>
             <a
               href={mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-gray-900 underline underline-offset-2 hover:no-underline"
+              className="mt-4 inline-flex items-center gap-2 text-[#004A3D] font-semibold underline hover:no-underline"
             >
-              mapa de envíos
-            </a>{" "}
-            interactivo.
-          </p>
-          <a
-            href={mapUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-4 inline-flex items-center gap-2 text-black font-medium underline hover:no-underline"
-          >
-            <MapPin className="h-4 w-4" />
-            Ver zonas de envío en el mapa
-          </a>
-          <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
-            <Image
-              src="/envios/mapa-zonas-envio.jpg"
-              alt="Mapa de zonas de envío de Despensa Natural en Montevideo y alrededores"
-              fill
-              className="h-full w-full object-cover"
-            />
+              <MapPin className="h-4 w-4" />
+              Ver zonas de envío en el mapa
+            </a>
+            <div className="relative mt-5 aspect-video w-full overflow-hidden rounded-xl bg-gray-50 shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
+              <Image
+                src="/envios/mapa-zonas-envio.jpg"
+                alt="Mapa de zonas de envío de Despensa Natural en Montevideo y alrededores"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </section>
+        </div>
       </div>
     </div>
   );

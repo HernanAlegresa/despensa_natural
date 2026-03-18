@@ -60,7 +60,7 @@ export function MobileFilterDrawer({
             <div className="flex items-center justify-between border-b px-6 pb-4 pt-2">
               <div className="flex items-center gap-2">
                 <SlidersHorizontal className="h-4 w-4" />
-                <h2 className="text-lg font-semibold">Filters</h2>
+                <h2 className="text-lg font-semibold text-[#292412]">Filtros</h2>
               </div>
               <button
                 onClick={onClose}
@@ -78,8 +78,8 @@ export function MobileFilterDrawer({
 
             {/* Footer */}
             <div className="border-t px-6 py-4">
-              <Button onClick={onClose} className="w-full" size="lg">
-                Show {resultCount} result{resultCount !== 1 ? "s" : ""}
+              <Button onClick={onClose} className="w-full !text-[#292412]" size="lg">
+                Ver {resultCount} producto{resultCount !== 1 ? "s" : ""}
               </Button>
             </div>
           </motion.div>

@@ -51,9 +51,10 @@ export function ProductCard({ product }: ProductCardProps) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      className="overflow-hidden rounded-2xl border border-[#F0E8DB] transition-colors hover:border-[#F0E8DB]"
     >
-      {/* Image area: link layer + button overlay on bottom */}
-      <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-gray-100 mb-3">
+      {/* Image area: full width/height, no chocolate visible around it */}
+      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl bg-gray-100">
         <Link
           href={`/producto/${product.slug}`}
           className="absolute inset-0 z-0 block"
@@ -91,14 +92,19 @@ export function ProductCard({ product }: ProductCardProps) {
               isHovered ? "md:opacity-100 md:translate-y-0" : "md:opacity-0 md:translate-y-2"
             )}
           >
+            {/* Subtle overlay for readability */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-t-2xl bg-gradient-to-t from-white/85 via-white/35 to-transparent"
+            />
             <button
               type="button"
               onClick={handleAddToCart}
               className={cn(
-                "w-full py-2 rounded-lg text-sm font-medium transition-colors shadow-lg",
-                "bg-gray-900 text-white hover:bg-gray-800",
-                "focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900",
-                added && "bg-green-700 hover:bg-green-700"
+                "relative w-full py-2 rounded-lg text-sm font-medium transition-colors shadow-lg",
+                "bg-primary text-white hover:bg-primary/90",
+                "focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary",
+                added && "bg-primary hover:bg-primary"
               )}
             >
               {added ? (
@@ -113,27 +119,33 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <Link href={`/producto/${product.slug}`} className="group block">
-        <h3 className="font-medium text-gray-900 text-sm leading-tight">
-          {product.name}
-        </h3>
-      </Link>
+      {/* Solo esta parte es chocolate; la imagen va de borde a borde arriba */}
+      <div className="bg-[#292412] p-3">
+        <Link href={`/producto/${product.slug}`} className="group block">
+          <h3 className="font-medium text-[#F0E8DB] text-sm leading-tight">
+            {product.name}
+          </h3>
+        </Link>
 
-      {weightText && (
-        <p className="text-xs text-gray-500 mt-0.5 whitespace-nowrap overflow-hidden text-ellipsis" title={weightText}>
-          {weightText}
-        </p>
-      )}
-
-      <div className="flex items-baseline gap-2 mt-0.5">
-        <span className="font-semibold text-gray-900 text-sm">
-          ${product.price.toFixed(2)}
-        </span>
-        {hasDiscount && (
-          <span className="text-xs text-gray-500 line-through">
-            ${product.compareAtPrice!.toFixed(0)}
-          </span>
+        {weightText && (
+          <p
+            className="text-xs text-[#F0E8DB]/80 mt-0.5 whitespace-nowrap overflow-hidden text-ellipsis"
+            title={weightText}
+          >
+            {weightText}
+          </p>
         )}
+
+        <div className="flex items-baseline gap-2 mt-0.5">
+          <span className="font-semibold text-[#BDAB29] text-sm">
+            ${product.price.toFixed(2)}
+          </span>
+          {hasDiscount && (
+            <span className="text-xs text-gray-500 line-through">
+              ${product.compareAtPrice!.toFixed(0)}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

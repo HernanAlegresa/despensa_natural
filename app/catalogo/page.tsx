@@ -47,7 +47,7 @@ async function CatalogoPageContent({ searchParams }: Props) {
   const sortedProducts = sortProducts(filteredProducts, sortOption, searchQuery);
 
   return (
-    <div className="container mx-auto px-4 pt-20 pb-8">
+    <div className="container mx-auto px-4 pt-20 pb-8 bg-[#F0E8DB]">
       <div className="mb-4 md:hidden">
         <MobileFilterTrigger resultCount={sortedProducts.length} />
       </div>
@@ -66,7 +66,7 @@ async function CatalogoPageContent({ searchParams }: Props) {
             <>
               <div className="mb-4 flex items-center justify-between">
                 <SortDropdown />
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-[#292412]">
                   {sortedProducts.length} producto{sortedProducts.length !== 1 ? "s" : ""}
                 </span>
               </div>

@@ -109,9 +109,6 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     return () => drawer.removeEventListener("keydown", handleTabKey);
   }, [isOpen]);
 
-  // Determine if items list should scroll (more than 4 items)
-  const shouldScroll = cart.items.length > 4;
-
   // Use portal to render at document root level
   const drawerContent = (
     <AnimatePresence>
@@ -189,14 +186,8 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
               </div>
             )}
 
-            {/* Cart Items - scrollable only when more than 4 items */}
-            <div
-              className={cn(
-                "bg-white",
-                shouldScroll ? "flex-1 overflow-y-auto" : "flex-shrink-0"
-              )}
-              style={shouldScroll ? { maxHeight: "calc(100vh - 380px)" } : undefined}
-            >
+            {/* Cart Items - scrollable list */}
+            <div className="flex-1 overflow-y-auto bg-white">
               {cart.items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full min-h-[300px] text-center px-6 bg-white">
                   <ShoppingBag className="h-20 w-20 text-gray-200 mb-6" />
@@ -345,7 +336,11 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                 {/* Action Buttons */}
                 <div className="space-y-2 pt-1">
                   {siteConfig.social.whatsapp ? (
-                    <Button className="w-full h-11 text-base font-semibold" size="lg" asChild>
+                    <Button
+                      className="w-full h-11 text-base font-semibold bg-primary hover:bg-primary/90 focus-visible:ring-primary"
+                      size="lg"
+                      asChild
+                    >
                       <a
                         href={`${siteConfig.social.whatsapp}?text=${encodeURIComponent(buildWhatsAppMessage(cart))}`}
                         target="_blank"

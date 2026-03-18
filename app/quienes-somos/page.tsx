@@ -10,22 +10,10 @@ export const metadata: Metadata = {
 
 export default function QuienesSomosPage() {
   return (
-    <article className="bg-white">
-      {/* Hero — imagen full-bleed sin texto */}
-      <header className="relative w-full min-h-[70vh] md:min-h-[70vh] overflow-hidden">
-        <Image
-          src="/quienes-somos/hero-equipo.jpg"
-          alt="Equipo de Despensa Natural preparando productos naturales"
-          fill
-          className="object-cover object-[center_40%]"
-          priority
-          sizes="100vw"
-        />
-      </header>
-
+    <article className="min-h-screen bg-[#F0E8DB]">
       {/* Image + Story */}
       <section className="border-b border-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 sm:pt-24 sm:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center max-w-6xl mx-auto">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 order-2 lg:order-1">
               <Image
