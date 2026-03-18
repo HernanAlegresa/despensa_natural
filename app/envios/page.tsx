@@ -67,7 +67,7 @@ export default function EnviosPage() {
           </p>
         </div>
 
-        <section className="mb-16">
+        <section className="mb-16 hidden sm:block">
           <h2 className="mb-6 text-2xl font-bold text-[#292412]">Opciones de entrega</h2>
           <div className="overflow-hidden rounded-2xl shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
             <table className="w-full">
