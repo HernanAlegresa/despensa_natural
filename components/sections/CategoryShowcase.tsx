@@ -12,15 +12,27 @@ import { getProductsByCollection } from "@/data/despensaNatural";
 // Layout: 1 full-width (multi-image) + 4 + 2 wide + 4 = 11 categories
 // Category images are static (no automatic rotation/transition).
 
-// Full-width card showing multiple product images from one category
-function FullWidthCollectionCard({
+// Multi-image card — compact shows 2 images (half-width use), full shows 4 (full-width use)
+function MultiImageCollectionCard({
   collection,
+  compact = false,
+  wide = false,
+  imagePositions,
 }: {
   collection: (typeof collections)[0];
+  compact?: boolean;
+  wide?: boolean;
+  imagePositions?: string[];
 }) {
   const products = getProductsByCollection(collection.slug);
   const allImages = products.flatMap((p) => p.images);
-  const displayImages = allImages.slice(0, 4);
+  const displayImages = allImages.slice(0, compact || wide ? 2 : 4);
+
+  const aspectClass = wide
+    ? "aspect-[2/1] md:aspect-[16/9]"
+    : compact
+    ? "aspect-[3/4]"
+    : "aspect-[21/9] min-h-[140px] sm:min-h-[180px]";
 
   return (
     <motion.div
@@ -30,8 +42,8 @@ function FullWidthCollectionCard({
       transition={{ duration: 0.4 }}
     >
       <Link href={`/categoria/${collection.slug}`} className="group block">
-        <div className="relative overflow-hidden rounded-xl bg-gray-100 aspect-[21/9] min-h-[140px] sm:min-h-[180px]">
-          <div className="absolute inset-0 grid grid-cols-2 sm:grid-cols-4">
+        <div className={`relative overflow-hidden rounded-xl bg-gray-100 ${aspectClass}`}>
+          <div className={`absolute inset-0 grid ${compact || wide ? "grid-cols-2" : "grid-cols-2 sm:grid-cols-4"}`}>
             {displayImages.length > 0 ? (
               displayImages.map((src, i) => (
                 <div key={i} className="relative overflow-hidden">
@@ -41,12 +53,13 @@ function FullWidthCollectionCard({
                     fill
                     quality={90}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={imagePositions?.[i] ? { objectPosition: imagePositions[i] } : undefined}
                     sizes="(max-width: 640px) 50vw, 25vw"
                   />
                 </div>
               ))
             ) : (
-              <div className="col-span-2 sm:col-span-4 absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+              <div className={`col-span-2 ${compact ? "" : "sm:col-span-4"} absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center`}>
                 <span className="text-gray-400 text-sm">No image</span>
               </div>
             )}
@@ -73,11 +86,13 @@ function CollectionCard({
   index,
   className,
   wide = false,
+  imagePosition,
 }: {
   collection: (typeof collections)[0];
   index: number;
   className?: string;
   wide?: boolean;
+  imagePosition?: string;
 }) {
   const products = getProductsByCollection(collection.slug);
   const allImages = products.flatMap((product) => product.images);
@@ -107,6 +122,7 @@ function CollectionCard({
               fill
               quality={95}
               className="object-cover transition-transform duration-500 group-hover:scale-105"
+              style={imagePosition ? { objectPosition: imagePosition } : undefined}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             />
           ) : (
@@ -134,12 +150,11 @@ function CollectionCard({
 }
 
 export function CategoryShowcase() {
-  const [row1, row2, row3, row4] = [
-    collections[0],
-    collections.slice(1, 5),
-    collections.slice(5, 7),
-    collections.slice(7, 11),
-  ];
+  const aceiteDeOliva = collections[0];
+  const huevos = collections[11];
+  const row2 = collections.slice(1, 5);
+  const row3 = collections.slice(5, 7);
+  const row4 = collections.slice(7, 11);
 
   return (
     <section
@@ -153,9 +168,10 @@ export function CategoryShowcase() {
           </h2>
         </div>
 
-        {/* Row 1: 1 full-width card with multiple product images */}
-        <div className="mb-3 md:mb-4">
-          <FullWidthCollectionCard collection={row1} />
+        {/* Row 1: aceite de oliva (2 images, wide) + huevos (wide) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-4">
+          <MultiImageCollectionCard collection={aceiteDeOliva} wide imagePositions={["center 20%", "center 40%"]} />
+          <CollectionCard collection={huevos} index={0} wide imagePosition="center 82%" />
         </div>
 
         {/* Row 2: 4 standard cards */}
@@ -171,14 +187,8 @@ export function CategoryShowcase() {
 
         {/* Row 3: 2 wide (half-width) cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 mb-3 md:mb-4">
-          {row3.map((collection, i) => (
-            <CollectionCard
-              key={collection.id}
-              collection={collection}
-              index={i}
-              wide
-            />
-          ))}
+          <CollectionCard collection={row3[0]} index={0} wide />
+          <CollectionCard collection={row3[1]} index={1} wide imagePosition="center 55%" />
         </div>
 
         {/* Row 4: 4 standard cards */}

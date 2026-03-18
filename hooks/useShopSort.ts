@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import type { SortOption } from "@/lib/types/product";
 
-const DEFAULT_SORT: SortOption = "relevance";
+const DEFAULT_SORT: SortOption = "name-asc";
 
 export function useShopSort() {
   const router = useRouter();

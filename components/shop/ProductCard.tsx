@@ -66,6 +66,7 @@ export function ProductCard({ product }: ProductCardProps) {
             fill
             quality={95}
             className="object-cover"
+            style={product.cardImagePosition ? { objectPosition: product.cardImagePosition } : undefined}
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             loading="lazy"
           />

@@ -34,7 +34,7 @@ function CatalogoContent({ searchParams }: Props) {
 async function CatalogoPageContent({ searchParams }: Props) {
   const params = await searchParams;
   const searchQuery = params.q || "";
-  const sortOption = (params.sort as SortOption) || "relevance";
+  const sortOption = (params.sort as SortOption) || "name-asc";
 
   const urlParams = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => {

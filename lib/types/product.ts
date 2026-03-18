@@ -38,6 +38,12 @@ export type Product = {
   createdAt: string;
   /** Brand name when applicable */
   brand?: string;
+  /** CSS object-position for the PDP gallery image, e.g. "center bottom" */
+  pdpImagePosition?: string;
+  /** object-fit override for the PDP gallery image */
+  pdpImageFit?: "cover" | "contain";
+  /** CSS object-position for the product card image */
+  cardImagePosition?: string;
 };
 
 export type ShopFilters = {

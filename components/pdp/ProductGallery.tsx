@@ -9,9 +9,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface ProductGalleryProps {
   images: string[];
   productName: string;
+  imagePosition?: string;
+  imageFit?: "cover" | "contain";
 }
 
-export function ProductGallery({ images, productName }: ProductGalleryProps) {
+export function ProductGallery({ images, productName, imagePosition, imageFit = "cover" }: ProductGalleryProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const handleImageSelect = useCallback((index: number) => {
@@ -39,63 +41,92 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main Image with Navigation */}
-      <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 group">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={selectedImageIndex}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0"
-          >
-            <ProductImage
-              src={mainImage}
-              alt={`${productName} - Image ${selectedImageIndex + 1}`}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={95}
-            />
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Navigation Arrows */}
-        {images.length > 1 && (
-          <>
-            <button
-              onClick={prevImage}
-              className={cn(
-                "absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 backdrop-blur-sm",
-                "opacity-0 group-hover:opacity-100 transition-opacity",
-                "hover:bg-white focus:outline-none focus:ring-2 focus:ring-black",
-                "shadow-lg"
-              )}
-              aria-label="Previous image"
+      {imageFit === "contain" ? (
+        /* Container adapts to the image's natural aspect ratio — no dead space */
+        <div className="relative overflow-hidden rounded-lg w-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedImageIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
             >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              onClick={nextImage}
-              className={cn(
-                "absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 backdrop-blur-sm",
-                "opacity-0 group-hover:opacity-100 transition-opacity",
-                "hover:bg-white focus:outline-none focus:ring-2 focus:ring-black",
-                "shadow-lg"
-              )}
-              aria-label="Next image"
+              <ProductImage
+                src={mainImage}
+                alt={`${productName} - Image ${selectedImageIndex + 1}`}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ width: "100%", height: "auto" }}
+                className="block rounded-lg"
+                priority
+                quality={95}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      ) : (
+        /* Fixed square container for object-cover images */
+        <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 group">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedImageIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0"
             >
-              <ChevronRight className="h-5 w-5" />
-            </button>
+              <ProductImage
+                src={mainImage}
+                alt={`${productName} - Image ${selectedImageIndex + 1}`}
+                fill
+                className="object-cover"
+                style={imagePosition ? { objectPosition: imagePosition } : undefined}
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={95}
+              />
+            </motion.div>
+          </AnimatePresence>
 
-            {/* Image Counter */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-medium">
-              {selectedImageIndex + 1} / {images.length}
-            </div>
-          </>
-        )}
-      </div>
+          {/* Navigation Arrows */}
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className={cn(
+                  "absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 backdrop-blur-sm",
+                  "opacity-0 group-hover:opacity-100 transition-opacity",
+                  "hover:bg-white focus:outline-none focus:ring-2 focus:ring-black",
+                  "shadow-lg"
+                )}
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={nextImage}
+                className={cn(
+                  "absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 backdrop-blur-sm",
+                  "opacity-0 group-hover:opacity-100 transition-opacity",
+                  "hover:bg-white focus:outline-none focus:ring-2 focus:ring-black",
+                  "shadow-lg"
+                )}
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-sm text-xs font-medium">
+                {selectedImageIndex + 1} / {images.length}
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
       {/* Thumbnail Gallery */}
       {images.length > 1 && (

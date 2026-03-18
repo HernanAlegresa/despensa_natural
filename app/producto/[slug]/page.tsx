@@ -73,7 +73,12 @@ export default async function ProductoPage({ params }: Props) {
       />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
         <div>
-          <ProductGallery images={product.images} productName={product.name} />
+          <ProductGallery
+            images={product.images}
+            productName={product.name}
+            imagePosition={product.pdpImagePosition}
+            imageFit={product.pdpImageFit}
+          />
         </div>
         <div>
           <ProductInfo product={product} />

@@ -7,11 +7,10 @@ import type { SortOption } from "@/lib/types/product";
 
 const sortOptions: { value: SortOption; label: string }[] = [
   { value: "relevance", label: "Relevancia" },
-  { value: "price-asc", label: "Precio: menor a mayor" },
-  { value: "price-desc", label: "Precio: mayor a menor" },
   { value: "name-asc", label: "Nombre: A a Z" },
   { value: "name-desc", label: "Nombre: Z a A" },
-  { value: "newest", label: "Más recientes" },
+  { value: "price-asc", label: "Precio: menor a mayor" },
+  { value: "price-desc", label: "Precio: mayor a menor" },
 ];
 
 export function SortDropdown() {
@@ -29,7 +28,7 @@ export function SortDropdown() {
       <div className="relative">
         <Select
           id="sort"
-          value={currentSort === "relevance" && !hasSearch ? "newest" : currentSort}
+          value={currentSort === "relevance" && !hasSearch ? "name-asc" : currentSort}
           onChange={(e) => updateSort(e.target.value as SortOption)}
           className="w-56 appearance-none border-[#004A3D] bg-[#004A3D] pr-10 text-[#F0E8DB] [&_option]:text-[#F0E8DB] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:border-[#004A3D]"
           aria-label="Ordenar productos"

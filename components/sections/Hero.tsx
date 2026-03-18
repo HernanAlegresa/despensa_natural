@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const HERO_IMAGE = "/hero/pedrosk-118.jpg";
+const HERO_IMAGE = "/hero/hero-principal.jpg";
 
 export function Hero() {
   return (

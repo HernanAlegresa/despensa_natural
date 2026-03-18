@@ -6,10 +6,16 @@ import type { Collection } from "@/lib/types/product";
 
 export const collections: Collection[] = [
   {
-    id: "aceites-ghee",
-    name: "Aceites & Ghee",
-    slug: "aceites-ghee",
-    description: "Aceites y ghee de calidad.",
+    id: "aceite-de-oliva",
+    name: "Aceite de oliva",
+    slug: "aceite-de-oliva",
+    description: "Aceites de oliva de calidad.",
+  },
+  {
+    id: "ghee",
+    name: "Ghee",
+    slug: "ghee",
+    description: "Ghee elaborado con leche de pastoreo.",
   },
   {
     id: "yerbas",
