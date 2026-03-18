@@ -51,7 +51,7 @@ export function ProductCard({ product }: ProductCardProps) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="overflow-hidden rounded-2xl border border-[#F0E8DB] transition-colors hover:border-[#F0E8DB]"
+      className="flex flex-col overflow-hidden rounded-2xl border border-[#F0E8DB] transition-colors hover:border-[#F0E8DB]"
     >
       {/* Image area: full width/height, no chocolate visible around it */}
       <div className="relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl bg-gray-100">
@@ -120,7 +120,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Solo esta parte es chocolate; la imagen va de borde a borde arriba */}
-      <div className="bg-[#292412] p-3">
+      <div className="flex flex-col bg-[#292412] p-3 flex-1">
         <Link href={`/producto/${product.slug}`} className="group block">
           <h3 className="font-medium text-[#F0E8DB] text-sm leading-tight">
             {product.name}
