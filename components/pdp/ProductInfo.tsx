@@ -48,8 +48,8 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <h1 className="text-3xl md:text-4xl font-bold mb-2 font-display">
           {product.name}
         </h1>
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl font-semibold">
+        <div className="mb-4 flex items-center gap-3">
+          <span className="text-3xl font-semibold text-primary">
             ${product.price.toFixed(0)}
           </span>
           {hasDiscount && (
@@ -73,9 +73,18 @@ export function ProductInfo({ product }: ProductInfoProps) {
         <p className="text-gray-600 leading-relaxed">{product.description}</p>
       </div>
 
-      {/* Weight (plain text only) */}
+      {/* Weight */}
       {weightText && (
-        <p className="text-sm text-gray-600">{weightText}</p>
+        <div className="flex flex-wrap gap-2">
+          {product.sizes.map((size) => (
+            <span
+              key={size}
+              className="inline-flex items-center rounded-full border border-gray-300 px-3 py-1 text-xs font-semibold text-gray-800"
+            >
+              {size}
+            </span>
+          ))}
+        </div>
       )}
 
       {/* Color Selection */}
@@ -117,7 +126,7 @@ export function ProductInfo({ product }: ProductInfoProps) {
         {product.inStock ? (
           <Button
             onClick={handleAddToCart}
-            className="w-full"
+            className="w-full bg-primary hover:bg-primary/90 focus-visible:ring-primary"
             size="lg"
           >
             Agregar al carrito

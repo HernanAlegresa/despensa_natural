@@ -10,10 +10,13 @@ export function FeaturedProducts() {
   const featuredProducts = getFeaturedProducts().slice(0, 8);
 
   return (
-    <section id="featured" className="relative pt-4 pb-2 sm:pt-6 sm:pb-3 bg-white">
+    <section
+      id="featured"
+      className="relative pt-4 pb-2 sm:pt-6 sm:pb-3 bg-[#F0E8DB]"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-6">
-          <h2 className="text-xl font-semibold tracking-tight">
+          <h2 className="text-xl font-semibold tracking-tight text-[#004A3D]">
             Productos más pedidos
           </h2>
         </div>

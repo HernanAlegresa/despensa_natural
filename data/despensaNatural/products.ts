@@ -17,7 +17,8 @@ export const products: Product[] = [
     name: "Aceite de oliva",
     slug: "aceite-oliva-campo-claro-500ml",
     brand: "Campo Claro",
-    description: "Aceite de oliva.",
+    description:
+      "Aceite de oliva orgánico Campo Claro, prensado en frío y sin aditivos. Ideal para sumar sabor y calidad a tus comidas de todos los días.",
     price: 650,
     images: ["/products/aceite-oliva-campo-claro-500ml/pedrosk-37.jpg"],
     category: getCat("aceites-ghee"),
@@ -33,7 +34,8 @@ export const products: Product[] = [
     name: "Aceite de oliva español",
     slug: "aceite-oliva-espanol-los-ranchos-3l",
     brand: "Los Ranchos",
-    description: "Aceite de oliva español.",
+    description:
+      "Aceite de oliva extra virgen Los Ranchos, de sabor equilibrado y textura suave. Pensado para quienes buscan un aceite de calidad superior en formato familiar.",
     price: 2180,
     images: ["/products/aceite-oliva-espanol-los-ranchos-3l/pedrosk-09.jpg"],
     category: getCat("aceites-ghee"),
@@ -49,7 +51,8 @@ export const products: Product[] = [
     name: "Ghee",
     slug: "ghee-agni-170g",
     brand: "Agni",
-    description: "Ghee.",
+    description:
+      "Ghee Agni elaborado en Uruguay con leche de vacas de pastoreo. Manteca clarificada rica en grasas saludables, ideal para cocinar y acompañar tus comidas.",
     price: 350,
     images: ["/products/ghee-agni-170g/pedrosk-45.jpg"],
     category: getCat("aceites-ghee"),
@@ -65,7 +68,8 @@ export const products: Product[] = [
     name: "Ghee",
     slug: "ghee-agni-300g",
     brand: "Agni",
-    description: "Ghee.",
+    description:
+      "Ghee Agni elaborado en Uruguay con leche de vacas de pastoreo. Manteca clarificada rica en grasas saludables, ideal para cocinar y acompañar tus comidas.",
     price: 520,
     images: ["/products/ghee-agni-300g/pedrosk-47.jpg"],
     category: getCat("aceites-ghee"),
@@ -83,7 +87,8 @@ export const products: Product[] = [
     name: "Yerba orgánica",
     slug: "yerba-organica-campo-claro-500g",
     brand: "Campo Claro",
-    description: "Yerba orgánica.",
+    description:
+      "Yerba mate orgánica Campo Claro, con blend equilibrado de hoja, palo y polvo. Sabor tradicional y suave para tomar mate todos los días.",
     price: 150,
     images: ["/products/yerba-organica-campo-claro-500g/pedrosk-49.jpg"],
     category: getCat("yerbas"),
@@ -99,7 +104,8 @@ export const products: Product[] = [
     name: "Yerba orgánica",
     slug: "yerba-organica-campo-claro-1kg",
     brand: "Campo Claro",
-    description: "Yerba orgánica.",
+    description:
+      "Yerba mate orgánica Campo Claro, con blend equilibrado de hoja, palo y polvo. Sabor tradicional y suave para tomar mate todos los días.",
     price: 290,
     images: ["/products/yerba-organica-campo-claro-1kg/pedrosk-43.jpg"],
     category: getCat("yerbas"),
@@ -115,7 +121,8 @@ export const products: Product[] = [
     name: "Yerba Montes Nativos",
     slug: "yerba-montes-nativos-campo-claro-500g",
     brand: "Campo Claro",
-    description: "Yerba Montes Nativos.",
+    description:
+      "Yerba Montes Nativos Campo Claro, cultivada bajo montes nativos. Tiene un sabor más suave y delicado, respetando la biodiversidad del entorno.",
     price: 150,
     images: ["/products/yerba-montes-nativos-campo-claro-500g/a5f0f0b5-e686-4bdc-8417-90bd8c615328.png"],
     category: getCat("yerbas"),
@@ -131,7 +138,8 @@ export const products: Product[] = [
     name: "Yerba Montes Nativos",
     slug: "yerba-montes-nativos-campo-claro-1kg",
     brand: "Campo Claro",
-    description: "Yerba Montes Nativos.",
+    description:
+      "Yerba Montes Nativos Campo Claro, cultivada bajo montes nativos. Tiene un sabor más suave y delicado, respetando la biodiversidad del entorno.",
     price: 290,
     images: ["/products/yerba-montes-nativos-campo-claro-1kg/pedrosk-39.jpg"],
     category: getCat("yerbas"),
@@ -149,7 +157,8 @@ export const products: Product[] = [
     name: "Café soluble",
     slug: "cafe-soluble-campo-claro-50g",
     brand: "Campo Claro",
-    description: "Café soluble.",
+    description:
+      "Café soluble Campo Claro, práctico y aromático para todos los días. Se disuelve fácil y ofrece un sabor equilibrado en cada taza.",
     price: 140,
     images: ["/products/cafe-soluble-campo-claro-50g/pedrosk-54.jpg"],
     category: getCat("cafes"),
@@ -165,7 +174,8 @@ export const products: Product[] = [
     name: "Café orgánico instantáneo",
     slug: "cafe-organico-instantaneo-campo-claro-90g",
     brand: "Campo Claro",
-    description: "Café orgánico instantáneo.",
+    description:
+      "Café orgánico instantáneo Campo Claro, 100% arábica y liofilizado. Conserva el sabor y aroma de un café de alta calidad en versión práctica.",
     price: 320,
     images: ["/products/cafe-organico-instantaneo-campo-claro-90g/0c784b2a-4536-4b30-bafb-0fda407a2ddc.png"],
     category: getCat("cafes"),
@@ -183,7 +193,8 @@ export const products: Product[] = [
     name: "Miel orgánica",
     slug: "miel-organica-dona-pura-250g",
     brand: "Doña Pura",
-    description: "Miel orgánica.",
+    description:
+      "Miel orgánica Doña Pura, 100% pura y sin aditivos. Recolectada en entornos libres de agroquímicos para un sabor natural y auténtico.",
     price: 180,
     images: ["/products/miel-organica-dona-pura-250g/6f58aa34-433c-44e8-b2ba-3de015fb3249.png"],
     category: getCat("miel"),
@@ -199,7 +210,8 @@ export const products: Product[] = [
     name: "Miel orgánica",
     slug: "miel-organica-dona-pura-500g",
     brand: "Doña Pura",
-    description: "Miel orgánica.",
+    description:
+      "Miel orgánica Doña Pura, 100% pura y sin aditivos. Recolectada en entornos libres de agroquímicos para un sabor natural y auténtico.",
     price: 295,
     images: ["/products/miel-organica-dona-pura-500g/pedrosk-56.jpg"],
     category: getCat("miel"),
@@ -215,7 +227,8 @@ export const products: Product[] = [
     name: "Miel de pradera",
     slug: "miel-de-pradera-dona-pura-250g",
     brand: "Doña Pura",
-    description: "Miel de pradera.",
+    description:
+      "Miel de pradera Doña Pura, de sabor suave y notas florales. Ideal para endulzar de forma natural tus desayunos y recetas.",
     price: 165,
     images: ["/products/miel-de-pradera-dona-pura-250g/pedrosk-59.jpg"],
     category: getCat("miel"),
@@ -231,7 +244,8 @@ export const products: Product[] = [
     name: "Miel de pradera",
     slug: "miel-de-pradera-dona-pura-500g",
     brand: "Doña Pura",
-    description: "Miel de pradera.",
+    description:
+      "Miel de pradera Doña Pura, de sabor suave y notas florales. Ideal para endulzar de forma natural tus desayunos y recetas.",
     price: 255,
     images: ["/products/miel-de-pradera-dona-pura-500g/pedrosk-60.jpg"],
     category: getCat("miel"),
@@ -249,7 +263,8 @@ export const products: Product[] = [
     name: "Sal marina",
     slug: "sal-marina-saldemar-500g",
     brand: "Saldemar",
-    description: "Sal marina.",
+    description:
+      "Sal marina Saldemar obtenida por evaporación de agua de mar. Menos procesada que la sal refinada y con minerales presentes de forma natural.",
     price: 450,
     images: ["/products/sal-marina-saldemar-500g/pedrosk-80.jpg"],
     category: getCat("sal-marina"),
@@ -267,7 +282,8 @@ export const products: Product[] = [
     name: "Yogurt griego",
     slug: "yogurt-griego-yogreek-550g",
     brand: "Yogreek",
-    description: "Yogurt griego.",
+    description:
+      "Yogurt griego Yogreek, elaborado de forma artesanal con ingredientes simples. Cremoso, rico en proteínas y sin conservantes añadidos.",
     price: 340,
     images: ["/products/yogurt-griego-yogreek-550g/pedrosk-55.jpg"],
     category: getCat("yogurt"),
@@ -285,7 +301,8 @@ export const products: Product[] = [
     name: "Carne deshidratada Papotitas",
     slug: "carne-deshidratada-papotitas-dalton-50g",
     brand: "Dalton",
-    description: "Carne deshidratada Papotitas.",
+    description:
+      "Chips de carne deshidratada Dalton sabor Papotitas, hechos con carne 100% uruguaya. Snack natural, alto en proteínas y sin aditivos.",
     price: 190,
     images: ["/products/carne-deshidratada-papotitas-dalton-50g/pedrosk-63.jpg"],
     category: getCat("snacks-de-carne"),
@@ -301,7 +318,8 @@ export const products: Product[] = [
     name: "Carne deshidratada Carnitas",
     slug: "carne-deshidratada-carnitas-dalton-75g",
     brand: "Dalton",
-    description: "Carne deshidratada Carnitas.",
+    description:
+      "Chips de carne deshidratada Dalton sabor Carnitas, hechos con carne 100% uruguaya. Snack natural, alto en proteínas y sin aditivos.",
     price: 250,
     images: ["/products/carne-deshidratada-carnitas-dalton-75g/pedrosk-64.jpg"],
     category: getCat("snacks-de-carne"),
@@ -319,7 +337,8 @@ export const products: Product[] = [
     name: "Crema de maní",
     slug: "crema-mani-4nuts-185g",
     brand: "4NUTS",
-    description: "Crema de maní.",
+    description:
+      "Crema de maní 4NUTS, hecha solo con maní tostado. Rica en proteínas y grasas saludables, sin azúcar ni aditivos.",
     price: 230,
     images: ["/products/crema-mani-4nuts-185g/pedrosk-26.jpg"],
     category: getCat("cremas-de-frutos-secos"),
@@ -335,7 +354,8 @@ export const products: Product[] = [
     name: "Crema de maní",
     slug: "crema-mani-4nuts-350g",
     brand: "4NUTS",
-    description: "Crema de maní.",
+    description:
+      "Crema de maní 4NUTS, hecha solo con maní tostado. Rica en proteínas y grasas saludables, sin azúcar ni aditivos.",
     price: 280,
     images: ["/products/crema-mani-4nuts-350g/pedrosk-29.jpg"],
     category: getCat("cremas-de-frutos-secos"),
@@ -351,7 +371,8 @@ export const products: Product[] = [
     name: "Crema de almendras",
     slug: "crema-almendras-4nuts-185g",
     brand: "4NUTS",
-    description: "Crema de almendras.",
+    description:
+      "Crema de almendras 4NUTS, suave y naturalmente dulce. Fuente de grasas saludables, ideal para tostadas, licuados o postres.",
     price: 390,
     images: ["/products/crema-almendras-4nuts-185g/almendras.jpeg"],
     category: getCat("cremas-de-frutos-secos"),
@@ -369,7 +390,8 @@ export const products: Product[] = [
     name: "Granola Best, Peanut Butter",
     slug: "granola-best-peanut-butter-300g",
     brand: "Best",
-    description: "Granola Best, Peanut Butter.",
+    description:
+      "Granola Best sabor Peanut Butter, crocante y llena de frutos y cereales. Perfecta para acompañar yogurt, leche o como snack.",
     price: 320,
     images: ["/products/granola-best-peanut-butter-300g/D_NQ_NP_2X_730347-MLU97442620403_112025-F.jepg.webp"],
     category: getCat("granola"),
@@ -385,7 +407,8 @@ export const products: Product[] = [
     name: "Granola Best, Dark Chocolate",
     slug: "granola-best-dark-chocolate-300g",
     brand: "Best",
-    description: "Granola Best, Dark Chocolate.",
+    description:
+      "Granola Best Dark Chocolate, mezcla crocante con notas de cacao intenso. Ideal para desayunos saciantes o sumar textura a tus postres.",
     price: 320,
     images: ["/products/granola-best-dark-chocolate-300g/2_f2c61023-6c3d-4aee-abed-b77e5fc53f7f.jpeg"],
     category: getCat("granola"),
@@ -403,7 +426,8 @@ export const products: Product[] = [
     name: "Barras Best, Coco",
     slug: "barras-best-coco-10u",
     brand: "Best",
-    description: "Barras Best, Coco.",
+    description:
+      "Barras Best sabor Coco, con ingredientes seleccionados y buena textura. Una opción práctica para colaciones más naturales.",
     price: 890,
     images: ["/products/barras-best-coco-10u/9c7cf281-01a9-4d43-acd1-6eee6eb60c44.png"],
     category: getCat("barritas"),
@@ -419,7 +443,8 @@ export const products: Product[] = [
     name: "Barras Best, Frutos rojos",
     slug: "barras-best-frutos-rojos-10u",
     brand: "Best",
-    description: "Barras Best, Frutos rojos.",
+    description:
+      "Barras Best sabor Frutos rojos, con un mix equilibrado y saciante. Ideales para llevar en la mochila o cartera.",
     price: 890,
     images: ["/products/barras-best-frutos-rojos-10u/pedrosk-99.jpg"],
     category: getCat("barritas"),
@@ -435,7 +460,8 @@ export const products: Product[] = [
     name: "Barras Best, Salty caramel",
     slug: "barras-best-salty-caramel-10u",
     brand: "Best",
-    description: "Barras Best, Salty caramel.",
+    description:
+      "Barras Best sabor Salty caramel, con el equilibrio justo entre dulce y salado. Perfectas para un snack diferente.",
     price: 890,
     images: ["/products/barras-best-salty-caramel-10u/pedrosk-91.jpg"],
     category: getCat("barritas"),
@@ -451,7 +477,8 @@ export const products: Product[] = [
     name: "Barras Best, Naranja",
     slug: "barras-best-naranja-10u",
     brand: "Best",
-    description: "Barras Best, Naranja.",
+    description:
+      "Barras Best sabor Naranja, frescas y energéticas. Buen aliado para media mañana, merienda o antes de entrenar.",
     price: 890,
     images: ["/products/barras-best-naranja-10u/pedrosk-97.jpg"],
     category: getCat("barritas"),
@@ -469,7 +496,8 @@ export const products: Product[] = [
     name: "Huevos de campo",
     slug: "huevos-de-campo-las-casuarinas-30u",
     brand: "Las Casuarinas",
-    description: "Huevos de campo.",
+    description:
+      "Huevos de campo Las Casuarinas, de gallinas criadas al aire libre. Ideales para preparaciones diarias con sabor casero.",
     price: 380,
     images: ["/products/huevos-de-campo-las-casuarinas-30u/b460c2_04883e59e4f1498fb95a652c0f63ecce_mv2-e1654622031387.jpg"],
     category: getCat("huevos"),

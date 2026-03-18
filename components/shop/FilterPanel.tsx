@@ -27,13 +27,13 @@ export function FilterPanel() {
   return (
     <aside className="w-full md:w-64 space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold">Filtros</h2>
+        <h2 className="text-lg font-semibold text-[#004A3D]">Filtros</h2>
         {hasFilters && (
           <Button
             variant="ghost"
             size="sm"
             onClick={clearFilters}
-            className="text-sm"
+            className="text-sm text-[#292412]"
           >
             Limpiar
           </Button>
@@ -42,7 +42,7 @@ export function FilterPanel() {
 
       {/* Category Filter */}
       <div>
-        <h3 className="text-sm font-medium mb-3">Categoría</h3>
+        <h3 className="text-sm font-medium mb-3 text-[#292412]">Categoría</h3>
         <div className="space-y-2">
           {availableFilters.categories.map((categorySlug) => {
             const isChecked = filters.category?.includes(categorySlug) || false;
@@ -51,15 +51,16 @@ export function FilterPanel() {
                 key={categorySlug}
                 className={cn(
                   "flex items-center gap-2 cursor-pointer",
-                  "hover:text-gray-900 transition-colors"
+                  "hover:text-[#292412] transition-colors"
                 )}
               >
                 <Checkbox
                   checked={isChecked}
                   onChange={() => toggleCategory(categorySlug)}
                   aria-label={`Filtrar por ${categorySlug}`}
+                  className="border-[#292412]"
                 />
-                <span className="text-sm capitalize">
+                <span className="text-sm capitalize text-[#292412]">
                   {categorySlug.replace(/-/g, " ")}
                 </span>
               </label>
@@ -70,7 +71,7 @@ export function FilterPanel() {
 
       {/* Price Range Filter */}
       <div>
-        <h3 className="text-sm font-medium mb-3">Precio</h3>
+        <h3 className="text-sm font-medium mb-3 text-[#292412]">Precio</h3>
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <Input
@@ -85,10 +86,10 @@ export function FilterPanel() {
                   : undefined;
                 setPriceRange(value, filters.maxPrice);
               }}
-              className="w-full"
+              className="w-full border-[#292412] text-[#292412] placeholder:text-[#292412]/70"
               aria-label="Precio mínimo"
             />
-            <span className="text-sm text-gray-500">a</span>
+            <span className="text-sm text-[#292412]">a</span>
             <Input
               type="number"
               placeholder="Máx"
@@ -101,11 +102,11 @@ export function FilterPanel() {
                   : undefined;
                 setPriceRange(filters.minPrice, value);
               }}
-              className="w-full"
+              className="w-full border-[#292412] text-[#292412] placeholder:text-[#292412]/70"
               aria-label="Precio máximo"
             />
           </div>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-[#292412]">
             ${availableFilters.priceRange.min.toFixed(0)} - $
             {availableFilters.priceRange.max.toFixed(0)}
           </p>

@@ -48,7 +48,7 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 border-b bg-white/80 backdrop-blur-sm border-gray-200 font-header font-bold">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#004A3D] bg-[#004A3D] font-header font-bold">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative flex h-16 items-center">
             {/* Logo - left */}
@@ -79,13 +79,13 @@ export function Header() {
                       key={link.href}
                       href={link.href}
                       className={cn(
-                        "text-[0.95rem] font-medium transition-colors duration-300 outline-none relative text-black hover:text-black/80",
+                        "text-[0.95rem] font-medium transition-colors duration-300 outline-none relative text-[#F0E8DB] hover:text-[#F0E8DB]",
                         isActive && "font-semibold"
                       )}
                     >
                       {link.label}
                       {isActive && (
-                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-black" />
+                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#F0E8DB]" />
                       )}
                     </Link>
                   );
@@ -97,7 +97,7 @@ export function Header() {
                 <button
                   onClick={() => setIsSearchOpen(true)}
                   aria-label="Buscar"
-                  className="pointer-events-auto p-2 outline-none transition-all duration-300 hover:scale-125 active:scale-95 text-primary hover:text-primary/80"
+                  className="pointer-events-auto p-2 outline-none transition-all duration-300 hover:scale-125 active:scale-95 text-[#A8CFB0] hover:text-[#A8CFB0]/80"
                 >
                   <svg
                     className="h-7 w-7 animate-pulse"
@@ -124,13 +124,13 @@ export function Header() {
                       key={link.href}
                       href={link.href}
                       className={cn(
-                        "text-[0.95rem] font-medium transition-colors duration-300 outline-none relative text-black hover:text-black/80",
+                        "text-[0.95rem] font-medium transition-colors duration-300 outline-none relative text-[#F0E8DB] hover:text-[#F0E8DB]",
                         isActive && "font-semibold"
                       )}
                     >
                       {link.label}
                       {isActive && (
-                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-black" />
+                        <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-[#F0E8DB]" />
                       )}
                     </Link>
                   );
@@ -144,7 +144,7 @@ export function Header() {
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className={cn(
-                  "lg:hidden p-2 outline-none transition-colors duration-300 text-primary"
+                  "lg:hidden p-2 outline-none transition-colors duration-300 text-[#A8CFB0]"
                 )}
                 aria-label="Buscar"
               >
@@ -164,7 +164,7 @@ export function Header() {
               </button>
 
               {CartWidget && (
-                <div className="transition-colors duration-300 text-primary">
+                <div className="transition-colors duration-300 text-[#F0E8DB]">
                   <CartWidget />
                 </div>
               )}
@@ -172,7 +172,7 @@ export function Header() {
               {/* Mobile menu button */}
               <button
                 className={cn(
-                  "lg:hidden p-2 outline-none transition-colors duration-300 text-primary"
+                  "lg:hidden p-2 outline-none transition-colors duration-300 text-[#F0E8DB]"
                 )}
                 aria-label="Toggle menu"
                 aria-expanded={isMobileMenuOpen}

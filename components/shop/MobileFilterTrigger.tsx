@@ -18,7 +18,7 @@ export function MobileFilterTrigger({ resultCount }: MobileFilterTriggerProps) {
         variant="outline"
         size="sm"
         onClick={() => setIsOpen(true)}
-        className="md:hidden flex items-center gap-2"
+        className="md:hidden flex items-center gap-2 text-[#292412]"
       >
         <SlidersHorizontal className="h-4 w-4" />
         Filtros
