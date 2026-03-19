@@ -12,7 +12,7 @@ export const siteConfig = {
     "Alimentos reales sin ultraprocesados, con ingredientes simples y naturales.",
 
   // ── URLs ───────────────────────────────────────
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://despensanatural.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://despensanatural.shop",
   ogImage: "/og-image.png",
 
   // ── Contact ────────────────────────────────────
