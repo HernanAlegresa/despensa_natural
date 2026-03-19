@@ -36,6 +36,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://despensanatural.shop"),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
@@ -50,11 +51,13 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [{ url: "/hero/pedrosk-118.jpg", alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: ["/hero/pedrosk-118.jpg"],
   },
   verification: {
     google: "sQMGgQXHqK3X1Pw5S_TCjXdstTr9pfDXHcifeO6KfUA",
@@ -79,7 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${onest.variable} ${cooper.variable} ${justMe.variable} ${inter.variable}`}
     >
       <body className="flex min-h-screen flex-col font-sans antialiased">

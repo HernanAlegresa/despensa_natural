@@ -4,7 +4,14 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: `Contactá a ${siteConfig.name} por WhatsApp, Instagram o email.`,
+  description:
+    "Contactanos para hacer tu pedido o resolver cualquier consulta sobre nuestros productos.",
+  openGraph: {
+    title: "Contacto | Despensa Natural",
+    description:
+      "Contactanos para hacer tu pedido o resolver cualquier consulta sobre nuestros productos.",
+    url: "https://despensanatural.shop/contacto",
+  },
 };
 
 export default function ContactoPage() {
