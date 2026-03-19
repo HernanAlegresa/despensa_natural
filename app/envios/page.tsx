@@ -5,7 +5,14 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Envíos",
-  description: `Cómo recibir tu pedido de ${siteConfig.name}. Retiro y envío en Montevideo y alrededores.`,
+  description:
+    "Conocé nuestras opciones de envío y cómo recibir tus productos naturales en Montevideo.",
+  openGraph: {
+    title: "Envíos | Despensa Natural",
+    description:
+      "Conocé nuestras opciones de envío y cómo recibir tus productos naturales en Montevideo.",
+    url: "https://despensanatural.shop/envios",
+  },
 };
 
 const deliveryOptions = [

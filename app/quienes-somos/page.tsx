@@ -5,7 +5,14 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Quiénes somos",
-  description: `Conocé la historia y los valores de ${siteConfig.name}. Alimentos reales, ingredientes simples.`,
+  description:
+    "Conocé nuestra filosofía: productos reales, alimentación consciente y calidad en cada elección.",
+  openGraph: {
+    title: "Quiénes somos | Despensa Natural",
+    description:
+      "Conocé nuestra filosofía: productos reales, alimentación consciente y calidad en cada elección.",
+    url: "https://despensanatural.shop/quienes-somos",
+  },
 };
 
 export default function QuienesSomosPage() {

@@ -6,8 +6,17 @@ import { BrandStory } from "@/components/sections/BrandStory";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Inicio",
-  description: siteConfig.description,
+  title: {
+    absolute: "Despensa Natural | Productos naturales en Montevideo",
+  },
+  description:
+    "Descubrí productos naturales, alimentos saludables y opciones reales para tu día a día en Montevideo. Compra fácil por WhatsApp.",
+  openGraph: {
+    title: "Despensa Natural | Productos naturales en Montevideo",
+    description:
+      "Descubrí productos naturales, alimentos saludables y opciones reales para tu día a día en Montevideo. Compra fácil por WhatsApp.",
+    url: "https://despensanatural.shop",
+  },
 };
 
 export default function Home() {

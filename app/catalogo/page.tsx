@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
+
+export const metadata: Metadata = {
+  title: "Catálogo",
+  description:
+    "Explorá nuestro catálogo de productos naturales, saludables y seleccionados para vos.",
+  openGraph: {
+    title: "Catálogo | Despensa Natural",
+    description:
+      "Explorá nuestro catálogo de productos naturales, saludables y seleccionados para vos.",
+    url: "https://despensanatural.shop/catalogo",
+  },
+};
 import { getAllProducts } from "@/data/despensaNatural";
 import { filterProducts, sortProducts } from "@/lib/shop/filters";
 import { parseFiltersFromSearchParams } from "@/lib/shop/normalize";
